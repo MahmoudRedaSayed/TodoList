@@ -7,10 +7,13 @@
 <div class="box">
 
     <% for(var count=0; count<newListItems.length; count++ ){ %>
-        <div class="item">
-            <input type="checkbox">
-            <p> <%= newListItems[count] %> </p>
+        
+            <form method="post" action="/<%= listTitle %>">
+                <div class="item">
+            <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%=  newListItems[count]._id%>">
+            <p> <%= newListItems[count].item %> </p>
         </div>
+            </form>
     <%} %>
 
     <form class="item" action="/" method="post">
